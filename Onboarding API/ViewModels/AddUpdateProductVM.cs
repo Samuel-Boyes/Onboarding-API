@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Onboarding_API.Models
+namespace Onboarding_API.ViewModels
 {
-    public class Product
+    public class AddUpdateProductVM
     {
-        public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public int Price { get; set; }
     }
 }
