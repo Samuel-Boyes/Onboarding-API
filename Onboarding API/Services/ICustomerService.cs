@@ -6,10 +6,10 @@ namespace Onboarding_API.Services
     public interface ICustomerService
     {
         Task<int> CreateCustomer(AddUpdateCustomerVM model);
-        Task<Customer> GetCustomerById(int id);
+        Task<Customer?> GetCustomerById(int id);
         Task<List<Customer>> GetCustomers();
-        Task<Customer> UpdateCustomer(AddUpdateCustomerVM model);
-        Task DeleteCustomer(int id);
+        Task<Customer> UpdateCustomer(Customer customer);
+        Task DeleteCustomer(Customer customer);
         bool CustomerExists(int id);
     }
 }

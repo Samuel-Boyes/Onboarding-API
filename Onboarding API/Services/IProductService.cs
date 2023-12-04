@@ -8,8 +8,8 @@ namespace Onboarding_API.Services
         Task<int> CreateProduct(AddUpdateProductVM model);
         Task<Product> GetProductById(int id);
         Task<List<Product>> GetProducts();
-        Task<Product> UpdateProduct(AddUpdateProductVM model);
-        Task DeleteProduct(int id);
+        Task<Product> UpdateProduct(Product product);
+        Task DeleteProduct(Product product);
         bool ProductExists(int id);
     }
 }

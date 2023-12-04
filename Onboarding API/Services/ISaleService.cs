@@ -8,8 +8,8 @@ namespace Onboarding_API.Services
         Task<int> CreateSale(AddUpdateSaleVM model);
         Task<Sale> GetSaleById(int id);
         Task<List<Sale>> GetSales();
-        Task<Sale> UpdateSale(AddUpdateSaleVM model);
-        Task DeleteSale(int id);
+        Task<Sale> UpdateSale(Sale sale);
+        Task DeleteSale(Sale sale);
         bool SaleExists(int id);
     }
 }

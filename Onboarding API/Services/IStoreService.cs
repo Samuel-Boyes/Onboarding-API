@@ -8,8 +8,8 @@ namespace Onboarding_API.Services
         Task<int> CreateStore(AddUpdateStoreVM model);
         Task<Store> GetStoreById(int id);
         Task<List<Store>> GetStores();
-        Task<Store> UpdateStore(AddUpdateStoreVM model);
-        Task DeleteStore(int id);
+        Task<Store> UpdateStore(Store store);
+        Task DeleteStore(Store store);
         bool StoreExists(int id);
     }
 }
