@@ -6,7 +6,7 @@ namespace Onboarding_API.Services
     public interface ISaleService
     {
         Task<int> CreateSale(AddUpdateSaleVM model);
-        Task<Sale> GetSaleById(int id);
+        Task<Sale?> GetSaleById(int id);
         Task<List<Sale>> GetSales();
         Task<Sale> UpdateSale(Sale sale);
         Task DeleteSale(Sale sale);
