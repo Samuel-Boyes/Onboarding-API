@@ -30,9 +30,17 @@ namespace Onboarding_API.Services
             return sale.Id;
         }
 
-        public async Task DeleteSale(Sale sale)
+        public async Task DeleteSale(int id)
         {
-            _context.Remove(sale);
+            var sale = await this.GetSaleById(id);
+            if (sale != null)
+            {
+                _context.Remove(sale);
+            }
+            else
+            {
+                throw new Exception("Delete attempt failed, sale with ID: " + id + " does not exist");
+            }
             await _context.SaveChangesAsync();
         }
 

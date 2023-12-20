@@ -9,7 +9,7 @@ namespace Onboarding_API.Services
         Task<Product?> GetProductById(int id);
         Task<List<Product>> GetProducts();
         Task<Product> UpdateProduct(Product product);
-        Task DeleteProduct(Product product);
+        Task DeleteProduct(int id);
         bool ProductExists(int id);
     }
 }

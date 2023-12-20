@@ -31,9 +31,16 @@ namespace Onboarding_API.Services
             return customer.Id;
         }
 
-        public async Task DeleteCustomer(Customer customer)
+        public async Task DeleteCustomer(int id)
         {
-            _context.Remove(customer);
+            var customer = await this.GetCustomerById(id);
+            if (customer != null)
+            {
+                _context.Remove(customer);
+            } else
+            {
+                throw new Exception("Delete attempt failed, customer with ID: " + id + " does not exist");
+            }
             await _context.SaveChangesAsync();
         }
 

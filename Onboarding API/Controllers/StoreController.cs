@@ -43,14 +43,14 @@ namespace Onboarding_API.Controllers
             return Ok(await _storeService.UpdateStore(store));
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete([FromBody] Store store)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            if (!_storeService.StoreExists(store.Id))
+            if (!_storeService.StoreExists(id))
             {
                 return NotFound();
             }
-            await _storeService.DeleteStore(store);
+            await _storeService.DeleteStore(id);
             return Ok();
         }
 

@@ -9,7 +9,7 @@ namespace Onboarding_API.Services
         Task<Store?> GetStoreById(int id);
         Task<List<Store>> GetStores();
         Task<Store> UpdateStore(Store store);
-        Task DeleteStore(Store store);
+        Task DeleteStore(int id);
         bool StoreExists(int id);
     }
 }

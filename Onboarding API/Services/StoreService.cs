@@ -28,9 +28,17 @@ namespace Onboarding_API.Services
             return store.Id;
         }
 
-        public async Task DeleteStore(Store store)
+        public async Task DeleteStore(int id)
         {
-            _context.Remove(store);
+            var store = await this.GetStoreById(id);
+            if (store != null)
+            {
+                _context.Remove(store);
+            }
+            else
+            {
+                throw new Exception("Delete attempt failed, store with ID: " + id + " does not exist");
+            }
             await _context.SaveChangesAsync();
         }
 

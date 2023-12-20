@@ -28,9 +28,17 @@ namespace Onboarding_API.Services
             return product.Id;
         }
 
-        public async Task DeleteProduct(Product product)
+        public async Task DeleteProduct(int id)
         {
-            _context.Remove(product);
+            var product = await this.GetProductById(id);
+            if (product != null)
+            {
+                _context.Remove(product);
+            }
+            else
+            {
+                throw new Exception("Delete attempt failed, product with ID: " + id + " does not exist");
+            }
             await _context.SaveChangesAsync();
         }
 

@@ -9,7 +9,7 @@ namespace Onboarding_API.Services
         Task<Sale?> GetSaleById(int id);
         Task<List<Sale>> GetSales();
         Task<Sale> UpdateSale(Sale sale);
-        Task DeleteSale(Sale sale);
+        Task DeleteSale(int id);
         bool SaleExists(int id);
     }
 }

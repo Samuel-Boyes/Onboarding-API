@@ -9,7 +9,7 @@ namespace Onboarding_API.Services
         Task<Customer?> GetCustomerById(int id);
         Task<List<Customer>> GetCustomers();
         Task<Customer> UpdateCustomer(Customer customer);
-        Task DeleteCustomer(Customer customer);
+        Task DeleteCustomer(int id);
         bool CustomerExists(int id);
     }
 }

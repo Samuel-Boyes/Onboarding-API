@@ -47,14 +47,14 @@ namespace Onboarding_API.Controllers
             return Ok(await _customerService.UpdateCustomer(customer));
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete([FromBody] Customer customer)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            if (!_customerService.CustomerExists(customer.Id))
+            if (!_customerService.CustomerExists(id))
             {
                 return NotFound();
             }
-            await _customerService.DeleteCustomer(customer);
+            await _customerService.DeleteCustomer(id);
             return Ok();
         }
     }
