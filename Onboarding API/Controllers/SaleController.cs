@@ -21,6 +21,12 @@ namespace Onboarding_API.Controllers
             return Ok(await _saleService.GetSales());
         }
 
+        [HttpGet("detailed")]
+        public async Task<IActionResult> GetDetailed()
+        {
+            return Ok(await _saleService.GetDetailedSales());
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetSingle(int id)
         {
