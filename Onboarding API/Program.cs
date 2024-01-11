@@ -17,6 +17,7 @@ builder.Services.AddCors(options =>
     options.AddDefaultPolicy(policyBuilder => policyBuilder
         .WithOrigins(
         "https://localhost:44410",
+        "https://onboardingfrontend12312.azurewebsites.net/",
         "*"
         )
         .AllowAnyHeader()
